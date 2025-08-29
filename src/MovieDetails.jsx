@@ -49,7 +49,8 @@ export default function MovieDetail() {
     <div style={{ alignItems: "center", display: "flex", flexDirection: "column"}}>
         <nav style={{zIndex:"999"}}>
             <a href="/" className="logo">CineRate<span style={{position: "relative", top:"-5px", left:"5px"}}>🎥🔥</span></a>
-            <a>Link</a>
+            <a>Popular</a>
+            <a>Upcoming</a>
         </nav>
 
         <img

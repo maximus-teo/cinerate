@@ -13,27 +13,57 @@ export default function App() {
   const [moviesPopular, setMoviesPopular] = useState([]);
   const [moviesUpcoming, setMoviesUpcoming] = useState([]);
 
+  const backendURL = "http://localhost:5000";
+
   useEffect(() => {
-    axios.get("http://localhost:5000/api/popular")
+    axios.get(`${backendURL}/api/popular`)
       .then(res => setMoviesPopular(res.data.results))
       .catch(err => console.error(err));
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/upcoming")
+    axios.get(`${backendURL}/api/upcoming`)
       .then(res => setMoviesUpcoming(res.data.results))
       .catch(err => console.error(err));
   }, []);
 
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlideIndex((prevIndex) => (prevIndex + 1) % moviesPopular.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [moviesPopular.length]);
+  
   return (
     <div>
       <nav>
-        <a href="/" className="logo">CineRate<span style={{position: "relative", top:"-5px", left:"5px"}}>🎥🔥</span></a>
+        <a href="/" className="logo"><img src="assets/cinerate_logo.png"/></a>
         <a>Popular</a>
         <a>Upcoming</a>
+        <a>Search</a>
       </nav>
       <div style={{ padding: "1rem" }}>
-        
+
+      <div className="slideshow-container">
+        {moviesPopular.map((movie, index) => (
+          <div
+            className="main-card fade"
+            key={movie.id}
+            style={{ display: index === slideIndex ? "block" : "none" }}
+          >
+            <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title}/>
+          </div>
+        ))}
+      </div>
+        <br/>
+
+        <div style={{textAlign:"center"}}>
+          {moviesPopular.map(movie => (
+            <span className="dot" key={movie.id}></span> 
+          ))}
+        </div>
 
         <h1>Popular Movies</h1>
         <div className="scrolling-wrapper">
