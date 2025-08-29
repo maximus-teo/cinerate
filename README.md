@@ -1,13 +1,42 @@
-# React + Vite
+# Cinerate 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cinerate is a website that allows users to stay up to date with popular and upcoming entertainment media, in terms of comparing ratings, reviews and streaming platforms. Inspired by IMDb and Letterboxd.
 
-Currently, two official plugins are available:
+## 🌐 Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To be published soon.
 
-## Expanding the ESLint configuration
+![demo screenshot](./screenshot.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# cinerate 
+---
+
+## 🚀 Features
+
+- Clean, minimalist UI with posters and banners specific to each movie or TV show
+- Compare ratings on IMDb, Rotten Tomatoes and Google reviews
+- View all available streaming platforms
+- Basic information about the show, e.g. cast, crew, release date, budget, box office, etc.
+- Mobile responsive design
+
+---
+
+## 🛠️ Setup
+
+You may choose to run this project on your machine as follows:
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/maximus-teo/cinerate.git
+cd cinerate/src
+
+# 2. Install dependencies
+npm install
+
+# 3. Get an API key with TMDB (The Movie Database)
+Visit https://themoviedb.org/ for more information
+
+# 4. Start the development server
+npm run dev
+```
+
+~ Designed and developed by **Maximus Teo**
